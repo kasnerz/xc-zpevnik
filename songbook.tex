@@ -2,7 +2,10 @@
 \usepackage{ifpdf}
 \usepackage[noshading,chorded]{songs}
 \usepackage[utf8]{inputenc}
-\usepackage[nf]{coelacanth}
+% \usepackage[nf]{coelacanth}
+% \usepackage[default,regular]{sourceserifpro}
+% \usepackage{venturis2}
+\usepackage{fourier}
 \usepackage[T1]{fontenc}
 \usepackage{pdfpages}
 \usepackage{hyperref}
@@ -87,25 +90,33 @@
 \newindex{idx2international}{toc/idx2international}
 \indexsongsas{idx1czech}{\thepage}
 \indexsongsas{idx1international}{\thepage}
-\indexsongsas{idx2czech}{\thepage}
-\indexsongsas{idx2international}{\thepage}
 
 \begin{document}
 
 \pagenumbering{gobble}
-\includepdf[pages=-]{cover/cover.pdf}
+% \includepdf[pages=-]{cover/cover.pdf}
+
+\vspace*{\fill}
+\begin{center}
+  \Huge\bfseries X-Challenge zpěvník
+\end{center}
+\vspace*{\fill}
+
+\pagebreak
 \showindex[2]{\huge České a slovenské}{idx1czech}
-\vspace{1cm}
+\newpage
 \showindex[2]{\huge Zahraniční}{idx1international}
-\vspace{1cm}
+% \vspace{1cm}
 \pagenumbering{arabic}
 \leavevmode\thispagestyle{empty} \newpage
 
 
-\includepdf[pages=-]{cover/part1.pdf}
-\sclearpage
-\newpage
-\includepdf[pages=-]{cover/czech.pdf}
+\vspace*{\fill}
+\begin{center}
+  \Huge\bfseries České a slovenské
+\end{center}
+\vspace*{\fill}
+\pagebreak
 
 \begin{songs}{idx1czech}
   \input{songs/amerika.tex}
@@ -171,6 +182,7 @@
   \input{songs/marie.tex}
   \input{songs/mam_jizvu_na_rtu.tex}
   \input{songs/medvidek.tex}
+  \sclearpage
   \input{songs/mesic.tex}
   \input{songs/mezi_horami.tex}
   \input{songs/mlyny.tex}
@@ -234,9 +246,14 @@
 \begin{songs}{idx1international}
   \sclearpage
   \leavevmode\thispagestyle{empty}\newpage
-  \includepdf[pages=-]{cover/international.pdf}
+  % \includepdf[pages=-]{cover/international.pdf}
   % \leavevmode\thispagestyle{empty}\newpage
-
+  \vspace*{\fill}
+  \begin{center}
+    \Huge\bfseries Zahraniční
+  \end{center}
+  \vspace*{\fill}
+  \pagebreak
   % \sclearpage
 
 
@@ -258,6 +275,7 @@
   \input{songs/help.tex}
   \input{songs/here_comes_the_sun.tex}
   \input{songs/hey_jude.tex}
+  \sclearpage
   \input{songs/hotel_california.tex}
   \input{songs/house_of_the_rising_sun.tex}
   \input{songs/hurt.tex}
@@ -303,20 +321,20 @@
 \begin{center}
   \vfill
 
-  Tento zpěvník obsahuje texty a akordy k více než 320 písničkám -- především v češtině a angličtině, ale i v řadě dalších jazyků. Písničky jsem vybíral podle svého hudebního vkusu, kromě toho děkuji za inspiraci i lidem ze svého okolí.  \\ \vspace*{0.5cm}
+  % Tento zpěvník obsahuje texty a akordy k více než 320 písničkám -- především v češtině a angličtině, ale i v řadě dalších jazyků. Písničky jsem vybíral podle svého hudebního vkusu, kromě toho děkuji za inspiraci i lidem ze svého okolí.  \\ \vspace*{0.5cm}
 
-  Zpěvník začal vznikat na začátku roku 2020 a postupně rostl, jak spolu s ním (nebo i díky němu?) rostly moje schopnosti hraní na kytaru. První verze byla dokončena a vytištěna v červenci 2022. Od té doby přibývají další písničky a připravuje se výtisk další části. \\ \vspace*{0.5cm}
+  % Zpěvník začal vznikat na začátku roku 2020 a postupně rostl, jak spolu s ním (nebo i díky němu?) rostly moje schopnosti hraní na kytaru. První verze byla dokončena a vytištěna v červenci 2022. Od té doby přibývají další písničky a připravuje se výtisk další části. \\ \vspace*{0.5cm}
 
-  Texty a akordy pocházejí z naprosté většiny ze stránek \texttt{ultimate-guitar.com}, \texttt{pisnicky-akordy.cz} a \texttt{supermusic.cz}. Všem dobrovolníkům, kteří texty a akordy na tyto servery přidávali, tímto děkuji. Speciální poděkování pak patří \texttt{chordu.com} za heuristické určení akordů k těm pár písničkám, co nebyly jinde k nalezení.  \\ \vspace*{0.5cm}
+  % Texty a akordy pocházejí z naprosté většiny ze stránek \texttt{ultimate-guitar.com}, \texttt{pisnicky-akordy.cz} a \texttt{supermusic.cz}. Všem dobrovolníkům, kteří texty a akordy na tyto servery přidávali, tímto děkuji. Speciální poděkování pak patří \texttt{chordu.com} za heuristické určení akordů k těm pár písničkám, co nebyly jinde k nalezení.  \\ \vspace*{0.5cm}
 
-  Písničky jsou vysázeny v \LaTeX u pomocí balíčku \texttt{songs}. K převodu akordů a textu z webu do \LaTeX u jsem používal vlastní skript \texttt{chords2latex}, který mi ušetřil spoustu ručního opisování. V řadě případů jsou akordy lehce upraveny, případně transponovány. Poznámky o capu určují tóninu originálu. \\ \vspace*{0.5cm}
+  % Písničky jsou vysázeny v \LaTeX u pomocí balíčku \texttt{songs}. K převodu akordů a textu z webu do \LaTeX u jsem používal vlastní skript \texttt{chords2latex}, který mi ušetřil spoustu ručního opisování. V řadě případů jsou akordy lehce upraveny, případně transponovány. Poznámky o capu určují tóninu originálu. \\ \vspace*{0.5cm}
 
-  Zpěvník jako PDF soubor, zdrojové kódy a skript pro převod akordů z webu do \LaTeX u je k dispozici na mém Githubu: \texttt{\url{https://github.com/kasnerz/songbook}}.  \\ \vspace*{0.5cm}
+  % Zpěvník jako PDF soubor, zdrojové kódy a skript pro převod akordů z webu do \LaTeX u je k dispozici na mém Githubu: \texttt{\url{https://github.com/kasnerz/songbook}}.  \\ \vspace*{0.5cm}
 
-  Pokud Ti zpěvník nějakým způsobem posloužil, budu rád za feedback! \\ \vspace*{0.5cm}
+  % Pokud Ti zpěvník nějakým způsobem posloužil, budu rád za feedback! \\ \vspace*{0.5cm}
 
 
-  \copyright 2024 Zdeněk Kasner \\ \vspace*{0.1cm}
+  \copyright 2024 Zdeněk Kasner \& tým X-Challenge \\ \vspace*{0.1cm}
   \texttt{zdenek.kasner@gmail.com} \\ \vspace*{0.5cm}
   \byncsa
 \end{center}
