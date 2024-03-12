@@ -1,0 +1,312 @@
+\documentclass{article}
+\usepackage{ifpdf}
+\usepackage[noshading,chorded]{songs}
+\usepackage[utf8]{inputenc}
+\usepackage[nf]{coelacanth}
+\usepackage[T1]{fontenc}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{cclicenses}
+
+\usepackage[a4paper, margin={1in}]{geometry}
+
+%% The font package uses mweights.sty which has som issues with the
+%% \normalfont command. The following two lines fixes this issue.
+\let\oldnormalfont\normalfont
+\def\normalfont{\oldnormalfont\mdseries}
+\noversenumbers
+\nosongnumbers
+% \songcolumns{1}
+% \spenalty=-10000
+% \afterpreludeskip=2pt plus 1fil
+% \beforepostludeskip=2pt plus 1fil
+
+\setlength{\sbarheight}{0pt}
+% \pagenumbering{gobble}
+
+
+\pagestyle{plain}
+
+\renewcommand{\flatsymbol}{m}
+
+% \renewcommand{\lyricfont}{\large}
+\renewcommand{\printchord}[1]{\rmfamily\bf#1}
+\renewcommand{\idxauthfont}{\large\it}
+\renewcommand{\stitlefont}{
+  \rmfamily\bf\huge\baselineskip=20pt\lineskiplimit=0pt
+}
+
+\notenames{A}{H}{C}{D}{E}{F}{G}
+
+\def\refchorus{
+\beginverse
+\vspace{-0.15in}
+\hspace{0.25in}\textbf{Ref.}
+\vspace{-0.05in}
+\endverse
+}
+
+\renewcommand{\songtarget}[2]
+{\pdfbookmark[#1]{\thesongnum. \songtitle}{#2}}
+\renewcommand{\songlink}[2]{\hyperlink{#1}{#2}}
+
+\renewcommand{\songchapter}{\chapter*}
+\renewcommand{\songsection}{\section*}
+\renewcommand{\idxrefsfont}{\bfseries}
+
+\renewcommand{\idxtitlefont}{\rmfamily}
+% \renewcommand{\idxlyricfont}{\rmfamily\mdseries}
+
+\renewcommand{\idxheadfont}{\bfseries\rmfamily}
+\setlength{\idxheadwidth}{0cm}
+
+\def\caponote[#1]{
+\hspace{-0.66cm}\textit{(capo #1)}
+}
+
+\def\chordskip{
+  \vspace{-0.5cm}
+}
+
+% \newindex{mainindex}{idxfile}
+
+\usepackage{xpatch}
+
+\makeatletter
+\xpatchcmd{\SB@@@beginsong}
+  {\SB@addtoindexes\songtitle}
+  {\SB@addtoindexes{\songtitle\ifx\songauthors\empty\else\ -- \songauthors\fi}}
+  {}{}
+\makeatother
+
+\sepindexesfalse
+
+\newindex{idx1czech}{toc/idx1czech}
+\newindex{idx1international}{toc/idx1international}
+\newindex{idx2czech}{toc/idx2czech}
+\newindex{idx2international}{toc/idx2international}
+\indexsongsas{idx1czech}{\thepage}
+\indexsongsas{idx1international}{\thepage}
+\indexsongsas{idx2czech}{\thepage}
+\indexsongsas{idx2international}{\thepage}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\includepdf[pages=-]{cover/cover.pdf}
+\showindex[2]{\huge České a slovenské}{idx1czech}
+\vspace{1cm}
+\showindex[2]{\huge Zahraniční}{idx1international}
+\vspace{1cm}
+\pagenumbering{arabic}
+\leavevmode\thispagestyle{empty} \newpage
+
+
+\includepdf[pages=-]{cover/part1.pdf}
+\sclearpage
+\newpage
+\includepdf[pages=-]{cover/czech.pdf}
+
+\begin{songs}{idx1czech}
+  \input{songs/amerika.tex}
+  \input{songs/andel.tex}
+  \input{songs/andele.tex}
+  \input{songs/ani_k_staru.tex}
+  \input{songs/bara.tex}
+  \input{songs/basnirka.tex}
+  \input{songs/batalion.tex}
+  \input{songs/bedna_od_whisky.tex}
+  \input{songs/blaznova_ukolebavka.tex}
+  \input{songs/bon_soir.tex}
+  \input{songs/bratricku_zavirej_vratka.tex}
+  \input{songs/cesta.tex}
+  \input{songs/cas.tex}
+  \input{songs/carodejnice_z_amesbury.tex}
+  \input{songs/cernej_pasazer.tex}
+  \input{songs/darmodej.tex}
+  \input{songs/dej_mi_vic.tex}
+  \input{songs/dezolat.tex}
+  \input{songs/dobrak_od_kosti.tex}
+  \input{songs/dobre_rano.tex}
+  \input{songs/dokud_se_zpiva.tex}
+  \input{songs/dopis.tex}
+  \input{songs/drobna_paralela.tex}
+  \input{songs/frankie_dlouhan.tex}
+  \input{songs/frantisek.tex}
+  \input{songs/hajny_je_lesa_pan.tex}
+  \input{songs/hleda_se_zena.tex}
+  \input{songs/hlidac_krav.tex}
+  \input{songs/hodinovy_hotel.tex}
+  \input{songs/holubi_dum.tex}
+  \input{songs/hruska.tex}
+  \input{songs/hudsonske_sify.tex}
+  \input{songs/huslicky.tex}
+  \input{songs/hvezda_na_vrbe.tex}
+  \input{songs/hvezdar.tex}
+  \input{songs/chci_zas_v_tobe_spat.tex}
+  \input{songs/chtel_jsem_mit.tex}
+  \input{songs/ja_s_tebou.tex}
+  \input{songs/jarosovsky_pivovar.tex}
+  \input{songs/jdou_po_mne.tex}
+  \input{songs/jelen.tex}
+  \input{songs/jeste_jedno_kafe.tex}
+  \input{songs/jo_tresne_zraly.tex}
+  \input{songs/karavana_mraku.tex}
+  \input{songs/kdyz_me_brali.tex}
+  \input{songs/klaro.tex}
+  \input{songs/kometa.tex}
+  \input{songs/kozel.tex}
+  \input{songs/krasojezdkyne.tex}
+  \input{songs/lokomotiva.tex}
+  \input{songs/magdalena.tex}
+  \input{songs/maja.tex}
+  \input{songs/malovani.tex}
+  \input{songs/mam_jizvu_na_rtu.tex}
+  \input{songs/marie_navarova.tex}
+  \input{songs/marie.tex}
+  \input{songs/medvidek.tex}
+  \input{songs/mesic.tex}
+  \input{songs/mezi_horami.tex}
+  \input{songs/mnisi_jsou_tisi.tex}
+  \input{songs/morituri.tex}
+  \input{songs/na_kameni_kamen.tex}
+  \input{songs/na_kolena.tex}
+  \input{songs/nad_stadem_koni.tex}
+  \input{songs/nagasaki_hirosima.tex}
+  \input{songs/nam_se_stalo.tex}
+  \input{songs/napojen.tex}
+  \input{songs/nejlip_jim_bylo.tex}
+  \input{songs/nikdy_nic_nebylo.tex}
+  \input{songs/okor.tex}
+  \input{songs/panenka.tex}
+  \input{songs/pazitka.tex}
+  \input{songs/pijte_vodu.tex}
+  \input{songs/pirati.tex}
+  \input{songs/plakala.tex}
+  \input{songs/pod_dubem.tex}
+  \input{songs/podvod.tex}
+  \input{songs/po_schodoch.tex}
+  \input{songs/poveste_ho_vejs.tex}
+  \input{songs/potkal_jsem_te_po_letech.tex}
+  \input{songs/promeny.tex}
+  \input{songs/prvni_signalni.tex}
+  \input{songs/rada_se_miluje.tex}
+  \input{songs/rana_v_trave.tex}
+  \input{songs/reklama_na_ticho.tex}
+  \input{songs/sametova.tex}
+  \input{songs/saro.tex}
+  \input{songs/sen.tex}
+  \input{songs/severni_vitr.tex}
+  \input{songs/sit.tex}
+  \input{songs/skala.tex}
+  \input{songs/slavici.tex}
+  \input{songs/slepic_pirka.tex}
+  \input{songs/slunecny_hrob.tex}
+  \input{songs/slzy_tvy_mamy.tex}
+  \input{songs/srdce_jako_knize_rohan.tex}
+  \input{songs/stanky.tex}
+  \input{songs/statistika.tex}
+  \input{songs/srouby_do_hlavy.tex}
+  \input{songs/toulavej.tex}
+  \input{songs/tri_krize.tex}
+  \input{songs/uz_to_nenapravim.tex}
+  \input{songs/variace.tex}
+  \input{songs/vcelin.tex}
+  \input{songs/voda_co_ma_drzi_nad_vodou.tex}
+  \input{songs/zabili.tex}
+  \input{songs/zafukane.tex}
+  \input{songs/zase_se_budim.tex}
+  % \sclearpage
+\end{songs}
+\begin{songs}{idx1international}
+  \sclearpage
+  \leavevmode\thispagestyle{empty}\newpage
+  \includepdf[pages=-]{cover/international.pdf}
+  % \leavevmode\thispagestyle{empty}\newpage
+
+  \sclearpage
+
+  \input{songs/4_chords.tex}
+  \input{songs/american_pie.tex}
+  \input{songs/behind_blue_eyes.tex}
+  \input{songs/bella_ciao.tex}
+  \input{songs/boxer.tex}
+  \input{songs/bring_me_to_life.tex}
+  \input{songs/californication.tex}
+  \input{songs/cant_stop.tex}
+  \input{songs/castle_of_glass.tex}
+  \input{songs/comfortably_numb.tex}
+  \input{songs/co_boli_to_preboli.tex}
+  \input{songs/drunken_sailor.tex}
+  \input{songs/forever_young.tex}
+  \input{songs/hallelujah.tex}
+  \input{songs/happy_christmas.tex}
+  \input{songs/help.tex}
+  \input{songs/here_comes_the_sun.tex}
+  \input{songs/hey_jude.tex}
+  \input{songs/hotel_california.tex}
+  \input{songs/house_of_the_rising_sun.tex}
+  \input{songs/hurt.tex}
+  \input{songs/i_ll_be_there_for_you.tex}
+  \input{songs/i_see_fire.tex}
+  \input{songs/ievan_polka.tex}
+  \input{songs/imagine.tex}
+  \input{songs/in_the_end.tex}
+  \input{songs/in_the_shadows.tex}
+  \input{songs/ironic.tex}
+  \input{songs/ja_dengy_propil.tex}
+  \input{songs/je_veux.tex}
+  \input{songs/lemon_tree.tex}
+  \input{songs/let_it_be.tex}
+  \input{songs/little_talks.tex}
+  \input{songs/livin_on_a_prayer.tex}
+  \input{songs/lonely_day.tex}
+  \input{songs/losing_my_religion.tex}
+  \input{songs/mad_world.tex}
+  \input{songs/mr_brightside.tex}
+  \input{songs/neverending_story.tex}
+  \input{songs/norwegian_wood.tex}
+  \input{songs/nothing_else_matters.tex}
+  \input{songs/numb.tex}
+  \input{songs/otherside.tex}
+  \input{songs/riptide.tex}
+  \input{songs/scarborough_fair.tex}
+  \input{songs/snow_hey_oh.tex}
+  \input{songs/somebody_i_used_to_know.tex}
+  \input{songs/sound_of_silence.tex}
+  \input{songs/sweet_dreams.tex}
+  \input{songs/take_me_home.tex}
+  \input{songs/this_is_the_life.tex}
+  \input{songs/viva_la_vida.tex}
+  \input{songs/we_are_the_champions.tex}
+  \input{songs/where_did_you_sleep.tex}
+  \input{songs/wish_you_were_here.tex}
+  \input{songs/wonderwall.tex}
+  \input{songs/yesterday.tex}
+  \input{songs/zombie.tex}
+\end{songs}
+% \leavevmode\thispagestyle{empty}
+\begin{center}
+  \vfill
+
+  Tento zpěvník obsahuje texty a akordy k více než 320 písničkám -- především v češtině a angličtině, ale i v řadě dalších jazyků. Písničky jsem vybíral podle svého hudebního vkusu, kromě toho děkuji za inspiraci i lidem ze svého okolí.  \\ \vspace*{0.5cm}
+
+  Zpěvník začal vznikat na začátku roku 2020 a postupně rostl, jak spolu s ním (nebo i díky němu?) rostly moje schopnosti hraní na kytaru. První verze byla dokončena a vytištěna v červenci 2022. Od té doby přibývají další písničky a připravuje se výtisk další části. \\ \vspace*{0.5cm}
+
+  Texty a akordy pocházejí z naprosté většiny ze stránek \texttt{ultimate-guitar.com}, \texttt{pisnicky-akordy.cz} a \texttt{supermusic.cz}. Všem dobrovolníkům, kteří texty a akordy na tyto servery přidávali, tímto děkuji. Speciální poděkování pak patří \texttt{chordu.com} za heuristické určení akordů k těm pár písničkám, co nebyly jinde k nalezení.  \\ \vspace*{0.5cm}
+
+  Písničky jsou vysázeny v \LaTeX u pomocí balíčku \texttt{songs}. K převodu akordů a textu z webu do \LaTeX u jsem používal vlastní skript \texttt{chords2latex}, který mi ušetřil spoustu ručního opisování. V řadě případů jsou akordy lehce upraveny, případně transponovány. Poznámky o capu určují tóninu originálu. \\ \vspace*{0.5cm}
+
+  Zpěvník jako PDF soubor, zdrojové kódy a skript pro převod akordů z webu do \LaTeX u je k dispozici na mém Githubu: \texttt{\url{https://github.com/kasnerz/songbook}}.  \\ \vspace*{0.5cm}
+
+  Pokud Ti zpěvník nějakým způsobem posloužil, budu rád za feedback! \\ \vspace*{0.5cm}
+
+
+  \copyright 2024 Zdeněk Kasner \\ \vspace*{0.1cm}
+  \texttt{zdenek.kasner@gmail.com} \\ \vspace*{0.5cm}
+  \byncsa
+\end{center}
+
+% % \leavevmode\thispagestyle{empty}\newpage
+% % \includepdf[pages=-]{cover/last.pdf}
+\end{document}
