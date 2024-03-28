@@ -10,10 +10,10 @@
 % \renewcommand*\oldstylenums[1]{{\AlegreyaOsF #1}}
 % \usepackage{caladea}
 % \usepackage[bitstream-charter]{mathdesign}
-\usepackage[light]{CrimsonPro}
+% \usepackage[light]{CrimsonPro}
 % \usepackage[medium]{CrimsonPro}
 % \usepackage{paratype} 
-% \usepackage{stickstootext}
+\usepackage{stickstootext}
 \usepackage[T1]{fontenc}
 %% The font package uses mweights.sty which has som issues with the
 %% \normalfont command. The following two lines fixes this issue.
@@ -106,7 +106,7 @@
 \begin{document}
 
 \pagenumbering{gobble}
-\includepdf[pages=-]{cover/cover.pdf}
+% \includepdf[pages=-]{cover/cover.pdf}
 
 % \vspace*{\fill}
 % \begin{center}
@@ -122,7 +122,7 @@
 \pagenumbering{arabic}
 \leavevmode\thispagestyle{empty} \newpage
 
-
+\leavevmode\thispagestyle{empty} \newpage
 \vspace*{\fill}
 \begin{center}
   \Huge\bfseries České a slovenské
@@ -148,8 +148,8 @@
   \input{songs/cernej_pasazer.tex}
   \input{songs/co_boli_to_preboli.tex}
   \input{songs/darmodej.tex}
-  \input{songs/dej_mi_vic.tex}
   \input{songs/dezolat.tex}
+  \input{songs/dej_mi_vic.tex}
   \input{songs/dobrak_od_kosti.tex}
   \input{songs/dokud_se_zpiva.tex}
   \input{songs/dobre_rano.tex}
@@ -251,8 +251,8 @@
   \input{songs/vcelin.tex}
   \input{songs/voda_co_ma_drzi_nad_vodou.tex}
   \input{songs/zabili.tex}
-  \input{songs/zafukane.tex}
   \input{songs/zase_se_budim.tex}
+  \input{songs/zafukane.tex}
   % \sclearpage
 \end{songs}
 \begin{songs}{idx1international}
@@ -344,7 +344,9 @@
   % Zpěvník jako PDF soubor, zdrojové kódy a skript pro převod akordů z webu do \LaTeX u je k dispozici na mém Githubu: \texttt{\url{https://github.com/kasnerz/songbook}}.  \\ \vspace*{0.5cm}
 
   % Pokud Ti zpěvník nějakým způsobem posloužil, budu rád za feedback! \\ \vspace*{0.5cm}
-
+  \vspace*{10cm}
+  TODO povídání o X-Challenge
+  \vspace*{10cm}
 
   \copyright 2024 Zdeněk Kasner \& tým X-Challenge \\ \vspace*{0.1cm}
   \texttt{zdenek.kasner@gmail.com} \\ \vspace*{0.5cm}
