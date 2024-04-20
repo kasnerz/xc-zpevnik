@@ -1,9 +1,12 @@
 \documentclass{article}
+\usepackage[a4paper,margin=0.84in]{geometry} 
 \usepackage{ifpdf}
 \usepackage[noshading,chorded]{songs}
 \usepackage[utf8]{inputenc}
+\usepackage{microtype}
+% \usepackage{graphicx,txfonts}
 % \usepackage[nf]{coelacanth}
-% \usepackage[default,regular]{sourceserifpro}
+\usepackage[default,regular]{sourceserifpro}
 % \usepackage{venturis2}
 % \usepackage{fourier}
 % \usepackage{Alegreya}
@@ -13,7 +16,7 @@
 % \usepackage[light]{CrimsonPro}
 % \usepackage[medium]{CrimsonPro}
 % \usepackage{paratype} 
-\usepackage{stickstootext}
+% \usepackage{stickstootext}
 \usepackage[T1]{fontenc}
 %% The font package uses mweights.sty which has som issues with the
 %% \normalfont command. The following two lines fixes this issue.
@@ -22,8 +25,22 @@
 \usepackage{pdfpages}
 \usepackage{hyperref}
 \usepackage{cclicenses}
+\usepackage{setspace}
+\usepackage{lilyglyphs}
 
-\usepackage[a4paper, margin={1in}]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\newcommand{\myrule} [3] []{
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[#2-#3, thick, #1] (0,0) to (0.5\linewidth,0);
+        \end{tikzpicture}
+    \end{center}
+}
+
+% \usepackage[a4paper, margin={1in}]{geometry}
 
 %% The font package uses mweights.sty which has som issues with the
 %% \normalfont command. The following two lines fixes this issue.
@@ -39,6 +56,7 @@
 \setlength{\sbarheight}{0pt}
 % \pagenumbering{gobble}
 
+\columnsep=1cm
 
 \pagestyle{plain}
 
@@ -106,7 +124,7 @@
 \begin{document}
 
 \pagenumbering{gobble}
-% \includepdf[pages=-]{cover/cover.pdf}
+\includepdf[pages=-]{cover/cover.pdf}
 
 % \vspace*{\fill}
 % \begin{center}
@@ -125,7 +143,8 @@
 \leavevmode\thispagestyle{empty} \newpage
 \vspace*{\fill}
 \begin{center}
-  \Huge\bfseries České a slovenské
+  {\fontsize{35}{60}\selectfont \bfseries České a slovenské}
+  % \Huge\bfseries 
 \end{center}
 \vspace*{\fill}
 \pagebreak
@@ -253,6 +272,7 @@
   \input{songs/zabili.tex}
   \input{songs/zase_se_budim.tex}
   \input{songs/zafukane.tex}
+  \input{songs/zatanci.tex}
   % \sclearpage
 \end{songs}
 \begin{songs}{idx1international}
@@ -262,7 +282,8 @@
   % \leavevmode\thispagestyle{empty}\newpage
   \vspace*{\fill}
   \begin{center}
-    \Huge\bfseries Zahraniční
+    {\fontsize{35}{60}\selectfont \bfseries Zahraniční}
+    % \Huge\bfseries Zahraniční
   \end{center}
   \vspace*{\fill}
   \pagebreak
@@ -307,6 +328,7 @@
   \input{songs/lonely_day.tex}
   \input{songs/mad_world.tex}
   \input{songs/mr_brightside.tex}
+  \sclearpage
   \input{songs/neverending_story.tex}
   \input{songs/norwegian_wood.tex}
   \input{songs/nothing_else_matters.tex}
@@ -331,24 +353,39 @@
 \end{songs}
 % \leavevmode\thispagestyle{empty}
 \begin{center}
-  \vfill
+\vfill
 
-  % Tento zpěvník obsahuje texty a akordy k více než 320 písničkám -- především v češtině a angličtině, ale i v řadě dalších jazyků. Písničky jsem vybíral podle svého hudebního vkusu, kromě toho děkuji za inspiraci i lidem ze svého okolí.  \\ \vspace*{0.5cm}
+\vspace*{2cm}
 
-  % Zpěvník začal vznikat na začátku roku 2020 a postupně rostl, jak spolu s ním (nebo i díky němu?) rostly moje schopnosti hraní na kytaru. První verze byla dokončena a vytištěna v červenci 2022. Od té doby přibývají další písničky a připravuje se výtisk další části. \\ \vspace*{0.5cm}
+\myrule{left to reversed}{left to reversed}
+\vspace*{0.5cm}
+\begin{quote}
+  \large \setstretch{1.25}
+  \setlength\parskip{12pt}
+  \textbf{Dokážeš víc, než si myslíš. Třeba vytvořit zpěvník \quaver}
 
-  % Texty a akordy pocházejí z naprosté většiny ze stránek \texttt{ultimate-guitar.com}, \texttt{pisnicky-akordy.cz} a \texttt{supermusic.cz}. Všem dobrovolníkům, kteří texty a akordy na tyto servery přidávali, tímto děkuji. Speciální poděkování pak patří \texttt{chordu.com} za heuristické určení akordů k těm pár písničkám, co nebyly jinde k nalezení.  \\ \vspace*{0.5cm}
+  \textit{Déle než tenhle zpěvník se rodil samotný nápad. Na hudebním jammování v X-Challenge se pokaždé našlo písniček dost  -- v jiných zpěvnících, v mobilech, v hlavách lidí\ldots{} Především díky nim během let vznikal můj vlastní kytarový zpěvník. Ten jsem nakonec nosil na akce tolik, až z toho stala sebeposilující smyčka: písničky v mém zpěvníku byly písničky z X-Challenge akcí, a lidi na X-Challenge akcích zpívali písničky z mého zpěvníku. Až jsem se jednou doslechl, že se z něj na jedné akci hrálo i beze mě. A tak mě napadlo: co ho takhle zremixovat na zpěvník šitý X-Challenge na míru?}
 
-  % Písničky jsou vysázeny v \LaTeX u pomocí balíčku \texttt{songs}. K převodu akordů a textu z webu do \LaTeX u jsem používal vlastní skript \texttt{chords2latex}, který mi ušetřil spoustu ručního opisování. V řadě případů jsou akordy lehce upraveny, případně transponovány. Poznámky o capu určují tóninu originálu. \\ \vspace*{0.5cm}
+  \textit{Děkuji Kubovi Benešovi, který mě na tento nápad přivedl, Terce Suchánkové za vytvoření parádního designu přední strany, a všem lidem, kteří hlasováním určili jeho obsah: Péťovi, Lenče, Elišce, Sůše, Ondrovi, Kačce, Báře, Julče, Lásce a	Richardovi.  Kromě nich pak děkuji i těm dalším nepřeberným lidem v X-Challenge, od nichž jsem načerpal mnohem víc, než jen nápady na písničky!}
 
-  % Zpěvník jako PDF soubor, zdrojové kódy a skript pro převod akordů z webu do \LaTeX u je k dispozici na mém Githubu: \texttt{\url{https://github.com/kasnerz/songbook}}.  \\ \vspace*{0.5cm}
+  \textit{P.S. Zpěvník má přesně 128 stran. Není to ale krásné kulaté číslo?}
 
-  % Pokud Ti zpěvník nějakým způsobem posloužil, budu rád za feedback! \\ \vspace*{0.5cm}
-  \vspace*{10cm}
-  TODO povídání o X-Challenge
-  \vspace*{10cm}
+  \flushright \textit{Zdeněk}
+\end{quote}
+% \vspace*{0.5cm}
+\myrule{left to reversed}{left to reversed}
+\vspace*{3cm}
+\normalsize
 
-  \copyright 2024 Zdeněk Kasner \& tým X-Challenge \\ \vspace*{0.1cm}
+
+
+
+\begin{center}
+  Zpěvník jako PDF soubor, zdrojové kódy a skript pro převod akordů z webu do \LaTeX u je k dispozici na \texttt{\url{https://github.com/kasnerz/xc-zpevnik}}.
+
+  \vspace*{0.5cm}
+
+  \textcopyright{} 2024 Zdeněk Kasner \& tým X-Challenge \\ \vspace*{0.1cm}
   \texttt{zdenek.kasner@gmail.com} \\ \vspace*{0.5cm}
   \byncsa
 \end{center}
